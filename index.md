@@ -4,12 +4,7 @@ title: A Great Vim Cheat Sheet
 ---
 
 
-#A Great Vim Cheat Sheet
-
-
-Note: If you’re decent at vim and want your mind blown, check out [Advanced Vim](advanced.html).
-
-I’ve compiled a list of *essential* vim commands that I use every day. I then give a few instructions on how to making vim as great as it should be, because it’s painful without configuration.
+#Freds Vim Cheat Sheet
 
 ##Cursor movement (Inside command/normal mode)
 
@@ -122,52 +117,4 @@ Marks allow you to jump to designated points in your code.
 * `u` - undo
 * `Ctrl+r` - redo
 * `.` - repeat last command
-
-#Making Vim actually useful
-Vim is quite unpleasant out of the box. For example, typeing `:w` for every file save is awkward and copying and pasting to the system clipboard does not work. But a few changes will get you much closer to the editor of your dreams.
-
-##.vimrc
-* [My .vimrc file](https://github.com/theicfire/dotfiles/blob/master/vim/.vimrc) has some pretty great ideas I haven't seen elsewhere.
-* This is a minimal vimrc that focuses on three priorities:
-    * adding options that are strictly better (like more information showing in autocomplete)
-    * more convenient keystrokes (like  `[space]w` for write, instead of `:w [enter]`)
-    * a similar workflow to normal text editors (like enabling the mouse)
-
-### Installation
-* Copy this to your home directory and restart vim. Read through it to see what you can now do (like  `[space]w` to save a file)
-    * mac users - making a hidden normal file is suprisingly tricky. Here’s one way:
-        * in the command line, go to the home directory
-        * type `nano .vimrc`
-        * paste in the contents of the .vimrc file
-        * `ctrl+x`, `y`, `[enter]` to save
-* You should now be able to press  `[space]w` in normal mode to save a file.
-* `[space]p` should paste from the system clipboard (outside of vim).
-    * If you can’t paste, it’s probably because vim was not built with the system clipboard option. To check, run `vim --version` and see if `+clipboard` exists. If it says `-clipboard`, you will not be able to copy from outside of vim.
-    * For mac users, homebrew install vim with the clipboard option. Install homebrew and then run `brew install vim`.
-        * then move the old vim binary: `$ mv /usr/bin/vim /usr/bin/vimold`
-        * restart your terminal and you should see `vim --version` now with `+clipboard`
-
-##Plugins
-* The easiest way to make vim more powerful is to use Vintageous in sublime (version 3). This gives you Vim mode inside sublime. I suggest this (or a similar setup with the Atom editor) if you aren't a vim master. Check out [Advanced Vim](advanced.html) if you are.
-* Vintageous is great, but I suggest you change a few settings to make it better.
-    * Clone [this repository](https://github.com/theicfire/Vintageous) to `~/.config/sublime-text-3/Packages/Vintageous`, or similar. Then check out the "custom" branch.
-        * Alternatively, you can get a more updated Vintageous version by cloning [the official](https://github.com/guillermooo/Vintageous) repo and then copying over [this patch](https://github.com/theicfire/Vintageous/commit/19ff6311b01e3ae259b7eb8e3944687b42ba06ff).
-    * Change the user settings (`User/Preferences.sublime-settings`) to include:
-        * `"caret_style": "solid"`
-        * This will make the cursor not blink, like in vim.
-        * sublime might freeze when you do this. It’s a bug; just restart sublime after changing the file.
-    * `ctrl+r` in vim means "redo". But there is a handy ctrl+r shortcut in sublime that gives an "outline" of a file. I remapped it to alt+r by putting this in the User keymap
-        * `{ "keys": ["alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },`
-    * [Add the ability to toggle vintageous on and off](https://github.com/guillermooo/Vintageous/wiki/Toggling-Vintageous)
-    * Mac users: you will not have the ability to hold down a navigation key (like holding j to go down). To fix this, run the commands specified here: [https://gist.github.com/kconragan/2510186](https://gist.github.com/kconragan/2510186)
- 
-* Now you should be able to restart sublime and have a great vim environment! Sweet Dude.
-
-##Switch Caps Lock and Escape
-* I highly recommend you switch the mapping of your caps lock and escape keys. You'll love it, promise! Switching the two keys is platform dependent; google should get you the answer
-
-##Other
-I don’t personally use these yet, but I’ve heard other people do!
-
-* `:wqa` - Write and quit all open tabs (thanks Brian Zick)
 
