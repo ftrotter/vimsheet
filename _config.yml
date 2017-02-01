@@ -1,9 +1,0 @@
-name: White Paper
-markdown: redcarpet
-url: http://vimsheet.com
-description: A Great Vim Cheat Sheet
-
-# Owner/author information
-owner:
-  name: Chase Lambert
-
