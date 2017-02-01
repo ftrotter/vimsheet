@@ -6,6 +6,14 @@ title: A Great Vim Cheat Sheet
 
 #Freds Vim Cheat Sheet
 
+##The line number things that I forget all the time
+* :set rnu - turn on relative line numbers
+* :set nornu - turn off relative line numbers
+
+these next two are good for your .vimrc
+* autocmd InsertEnter * :set norelativenumber - when you are entering insert mode remove the line numbers
+* autocmd InsertLeave * :set relativenumber - when you  are exiting insert mode (i.e. entering command mode) add line numbers
+
 ##Cursor movement (Inside command/normal mode)
 
 <img src="images/hjkl.png" alt="The four directions in VIM - hjkl"/>
